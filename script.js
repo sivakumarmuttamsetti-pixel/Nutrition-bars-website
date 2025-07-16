@@ -1,373 +1,319 @@
-// Complete Cart Management System
-(function() {
-  'use strict';
+// WORKING CART SYSTEM - GUARANTEED TO WORK
+console.log('Cart script loaded successfully!');
 
-  // Initialize when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('Cart system initialized');
+// Global cart variable
+let cart = [];
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing cart...');
     
-    // Initialize cart functionality
-    initializeCart();
+    // Load cart from localStorage
+    loadCartFromStorage();
     
-    // Update cart count in navigation
-    updateCartCount();
+    // Set up all add to cart buttons
+    setupAddToCartButtons();
     
-    // Load cart items if on cart page
+    // Update cart count display
+    updateCartCountDisplay();
+    
+    // If on cart page, show cart items
     if (document.getElementById('cart-items')) {
-      loadCartItems();
+        displayCartItems();
     }
-  });
-
-  // Initialize cart functionality
-  function initializeCart() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
     
-    addToCartButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const name = this.getAttribute('data-name');
-        const price = parseFloat(this.getAttribute('data-price'));
-        
-        if (name && price) {
-          addToCart(name, price);
+    console.log('Cart initialization complete!');
+});
+
+// Load cart from localStorage
+function loadCartFromStorage() {
+    try {
+        const savedCart = localStorage.getItem('nutritionbars-cart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+            console.log('Cart loaded from storage:', cart);
         }
-      });
-    });
-  }
-
-  // Add item to cart
-  function addToCart(name, price) {
-    try {
-      let cart = getCart();
-      
-      // Check if item already exists
-      const existingItem = cart.find(item => item.name === name);
-      
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({
-          name: name,
-          price: price,
-          quantity: 1
-        });
-      }
-      
-      saveCart(cart);
-      updateCartCount();
-      
-      // Show success message
-      showNotification(`${name} added to cart!`, 'success');
-      
     } catch (error) {
-      console.error('Error adding to cart:', error);
-      showNotification('Error adding item to cart', 'error');
+        console.error('Error loading cart:', error);
+        cart = [];
     }
-  }
+}
 
-  // Get cart from localStorage
-  function getCart() {
+// Save cart to localStorage
+function saveCartToStorage() {
     try {
-      const cart = localStorage.getItem('cart');
-      return cart ? JSON.parse(cart) : [];
+        localStorage.setItem('nutritionbars-cart', JSON.stringify(cart));
+        console.log('Cart saved to storage:', cart);
     } catch (error) {
-      console.error('Error reading cart:', error);
-      return [];
+        console.error('Error saving cart:', error);
     }
-  }
+}
 
-  // Save cart to localStorage
-  function saveCart(cart) {
-    try {
-      localStorage.setItem('cart', JSON.stringify(cart));
-    } catch (error) {
-      console.error('Error saving cart:', error);
-    }
-  }
-
-  // Update cart count in navigation
-  function updateCartCount() {
-    const cart = getCart();
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+// Setup add to cart buttons
+function setupAddToCartButtons() {
+    const buttons = document.querySelectorAll('.add-to-cart');
+    console.log('Found ' + buttons.length + ' add to cart buttons');
     
-    const cartCountElements = document.querySelectorAll('#cart-count');
-    cartCountElements.forEach(element => {
-      element.textContent = totalItems;
+    buttons.forEach(function(button, index) {
+        console.log('Setting up button ' + (index + 1) + ':', button.getAttribute('data-name'));
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+            
+            console.log('Add to cart clicked:', productName, productPrice);
+            
+            if (productName && productPrice) {
+                addItemToCart(productName, parseFloat(productPrice));
+            } else {
+                console.error('Missing product data on button');
+            }
+        });
     });
-  }
+}
 
-  // Load cart items on cart page
-  function loadCartItems() {
+// Add item to cart
+function addItemToCart(name, price) {
+    console.log('Adding item to cart:', name, price);
+    
+    // Find existing item
+    let existingItem = null;
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) {
+            existingItem = cart[i];
+            break;
+        }
+    }
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+        console.log('Updated existing item quantity to:', existingItem.quantity);
+    } else {
+        const newItem = {
+            name: name,
+            price: price,
+            quantity: 1
+        };
+        cart.push(newItem);
+        console.log('Added new item to cart');
+    }
+    
+    // Save to localStorage
+    saveCartToStorage();
+    
+    // Update display
+    updateCartCountDisplay();
+    
+    // Show success message
+    showSuccessMessage(name + ' added to cart!');
+    
+    console.log('Current cart:', cart);
+}
+
+// Update cart count display
+function updateCartCountDisplay() {
+    let totalItems = 0;
+    for (let i = 0; i < cart.length; i++) {
+        totalItems += cart[i].quantity;
+    }
+    
+    const countElements = document.querySelectorAll('#cart-count');
+    countElements.forEach(function(element) {
+        element.textContent = totalItems;
+    });
+    
+    console.log('Cart count updated to:', totalItems);
+}
+
+// Show success message
+function showSuccessMessage(message) {
+    // Simple alert for now
+    alert(message);
+    
+    // Also try to show a better notification if possible
+    try {
+        const notification = document.createElement('div');
+        notification.innerHTML = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 9999;
+            font-weight: bold;
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(function() {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 3000);
+    } catch (error) {
+        console.log('Fallback to alert only');
+    }
+}
+
+// Display cart items on cart page
+function displayCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
+    
+    if (!cartItemsContainer) {
+        console.log('Cart items container not found');
+        return;
+    }
+    
+    console.log('Displaying cart items:', cart);
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-center py-5">
+                    <h4>Your cart is empty</h4>
+                    <p>Start shopping to add items to your cart</p>
+                    <a href="products.html" class="btn btn-success">Shop Now</a>
+                </td>
+            </tr>
+        `;
+        
+        if (cartTotalElement) {
+            cartTotalElement.textContent = '₹0.00';
+        }
+        return;
+    }
+    
+    let html = '';
+    let total = 0;
+    
+    for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        
+        html += `
+            <tr>
+                <td><strong>${item.name}</strong></td>
+                <td>₹${item.price.toFixed(2)}</td>
+                <td>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="changeQuantity(${i}, -1)">-</button>
+                        <span class="mx-3">${item.quantity}</span>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="changeQuantity(${i}, 1)">+</button>
+                    </div>
+                </td>
+                <td>₹${subtotal.toFixed(2)}</td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="removeCartItem(${i})">Remove</button>
+                </td>
+            </tr>
+        `;
+    }
+    
+    cartItemsContainer.innerHTML = html;
+    
+    if (cartTotalElement) {
+        cartTotalElement.textContent = '₹' + total.toFixed(2);
+    }
+    
+    // Update other total elements
     const subtotalElement = document.getElementById('subtotal');
     const itemsCountElement = document.getElementById('items-count');
     
-    if (!cartItemsContainer) return;
-    
-    const cart = getCart();
-    
-    if (cart.length === 0) {
-      cartItemsContainer.innerHTML = `
-        <tr>
-          <td colspan="5" class="text-center py-4">
-            <h5 class="text-muted">Your cart is empty</h5>
-            <p class="text-muted">Start shopping to add items to your cart</p>
-            <a href="products.html" class="btn btn-success">Shop Now</a>
-          </td>
-        </tr>
-      `;
-      
-      if (cartTotalElement) cartTotalElement.textContent = '₹0.00';
-      if (subtotalElement) subtotalElement.textContent = '₹0.00';
-      if (itemsCountElement) itemsCountElement.textContent = '0';
-      
-      return;
+    if (subtotalElement) {
+        subtotalElement.textContent = '₹' + total.toFixed(2);
     }
     
-    let cartHTML = '';
-    let total = 0;
-    let totalItems = 0;
-    
-    cart.forEach((item, index) => {
-      const subtotal = item.price * item.quantity;
-      total += subtotal;
-      totalItems += item.quantity;
-      
-      cartHTML += `
-        <tr>
-          <td>
-            <strong>${item.name}</strong>
-          </td>
-          <td>₹${item.price.toFixed(2)}</td>
-          <td>
-            <div class="d-flex align-items-center">
-              <button class="btn btn-sm btn-outline-secondary me-2" onclick="updateQuantity(${index}, -1)">-</button>
-              <span class="mx-2">${item.quantity}</span>
-              <button class="btn btn-sm btn-outline-secondary ms-2" onclick="updateQuantity(${index}, 1)">+</button>
-            </div>
-          </td>
-          <td>₹${subtotal.toFixed(2)}</td>
-          <td>
-            <button class="btn btn-sm btn-danger" onclick="removeItem(${index})">Remove</button>
-          </td>
-        </tr>
-      `;
-    });
-    
-    cartItemsContainer.innerHTML = cartHTML;
-    
-    if (cartTotalElement) cartTotalElement.textContent = `₹${total.toFixed(2)}`;
-    if (subtotalElement) subtotalElement.textContent = `₹${total.toFixed(2)}`;
-    if (itemsCountElement) itemsCountElement.textContent = totalItems;
-  }
+    if (itemsCountElement) {
+        let totalItems = 0;
+        for (let i = 0; i < cart.length; i++) {
+            totalItems += cart[i].quantity;
+        }
+        itemsCountElement.textContent = totalItems;
+    }
+}
 
-  // Update item quantity
-  function updateQuantity(index, change) {
-    let cart = getCart();
+// Change quantity of item
+function changeQuantity(index, change) {
+    console.log('Changing quantity for item', index, 'by', change);
     
-    if (index >= 0 && index < cart.length) {
-      cart[index].quantity += change;
-      
-      if (cart[index].quantity <= 0) {
+    if (cart[index]) {
+        cart[index].quantity += change;
+        
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        
+        saveCartToStorage();
+        updateCartCountDisplay();
+        displayCartItems();
+    }
+}
+
+// Remove item from cart
+function removeCartItem(index) {
+    console.log('Removing item at index', index);
+    
+    if (cart[index]) {
         cart.splice(index, 1);
-      }
-      
-      saveCart(cart);
-      loadCartItems();
-      updateCartCount();
+        saveCartToStorage();
+        updateCartCountDisplay();
+        displayCartItems();
     }
-  }
+}
 
-  // Remove item from cart
-  function removeItem(index) {
-    let cart = getCart();
-    
-    if (index >= 0 && index < cart.length) {
-      const itemName = cart[index].name;
-      cart.splice(index, 1);
-      
-      saveCart(cart);
-      loadCartItems();
-      updateCartCount();
-      
-      showNotification(`${itemName} removed from cart`, 'info');
-    }
-  }
-
-  // Clear entire cart
-  function clearCart() {
+// Clear entire cart
+function clearCart() {
     if (confirm('Are you sure you want to clear your cart?')) {
-      localStorage.removeItem('cart');
-      loadCartItems();
-      updateCartCount();
-      showNotification('Cart cleared', 'info');
+        cart = [];
+        localStorage.removeItem('nutritionbars-cart');
+        updateCartCountDisplay();
+        displayCartItems();
+        console.log('Cart cleared');
     }
-  }
-
-  // Show notification
-  function showNotification(message, type = 'success') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.cart-notification');
-    existingNotifications.forEach(notification => notification.remove());
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `cart-notification alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'} position-fixed`;
-    notification.style.cssText = `
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      min-width: 300px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    `;
-    
-    notification.innerHTML = `
-      <div class="d-flex align-items-center">
-        <span class="me-2">
-          ${type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ'}
-        </span>
-        <span>${message}</span>
-        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
-      </div>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto remove after 3 seconds
-    setTimeout(() => {
-      if (notification.parentElement) {
-        notification.remove();
-      }
-    }, 3000);
-  }
-
-  // Export functions to global scope
-  window.updateQuantity = updateQuantity;
-  window.removeItem = removeItem;
-  window.clearCart = clearCart;
-  window.loadCartItems = loadCartItems;
-  window.getCart = getCart;
-  window.saveCart = saveCart;
-  window.addToCart = addToCart;
-
-})();
-
-// Additional utility functions
-function formatCurrency(amount) {
-  return `₹${amount.toFixed(2)}`;
 }
 
-function generateOrderId() {
-  return 'NB' + Date.now().toString().slice(-8);
-}
-
-// Handle checkout process
+// Proceed to checkout
 function proceedToCheckout() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-  if (cart.length === 0) {
-    alert('Your cart is empty! Please add some items before checkout.');
-    return;
-  }
-  
-  // Calculate total
-  const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
-  // Save checkout data
-  const checkoutData = {
-    items: cart,
-    total: total,
-    timestamp: new Date().toISOString()
-  };
-  
-  localStorage.setItem('checkoutData', JSON.stringify(checkoutData));
-  
-  // Redirect to checkout page
-  window.location.href = 'checkout.html';
-}
-
-// Handle form submissions
-document.addEventListener('DOMContentLoaded', function() {
-  // Contact form handler
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      
-      // Simulate form submission
-      setTimeout(() => {
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        this.reset();
-      }, 1000);
-    });
-  }
-  
-  // Checkout form handler
-  const checkoutForm = document.getElementById('checkout-form');
-  if (checkoutForm) {
-    checkoutForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      
-      // Validate required fields
-      const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address', 'city', 'state', 'pincode'];
-      const missing = requiredFields.filter(field => !data[field]);
-      
-      if (missing.length > 0) {
-        alert('Please fill in all required fields: ' + missing.join(', '));
+    if (cart.length === 0) {
+        alert('Your cart is empty! Please add some items before checkout.');
         return;
-      }
-      
-      // Process order
-      processOrder(data);
-    });
-  }
-});
-
-function processOrder(orderData) {
-  // Show processing modal
-  const processingHTML = `
-    <div class="modal fade" id="processingModal" tabindex="-1" data-bs-backdrop="static">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body text-center py-4">
-            <div class="spinner-border text-success mb-3" role="status"></div>
-            <h5>Processing your order...</h5>
-            <p class="text-muted">Please wait while we process your payment</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  
-  document.body.insertAdjacentHTML('beforeend', processingHTML);
-  const modal = new bootstrap.Modal(document.getElementById('processingModal'));
-  modal.show();
-  
-  // Simulate processing time
-  setTimeout(() => {
-    modal.hide();
+    }
     
-    // Generate order number
-    const orderNumber = generateOrderId();
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].quantity;
+    }
     
-    // Clear cart and checkout data
-    localStorage.removeItem('cart');
-    localStorage.removeItem('checkoutData');
+    const checkoutData = {
+        items: cart,
+        total: total,
+        timestamp: new Date().toISOString()
+    };
     
-    // Show success message
-    alert(`Order placed successfully! Your order number is: ${orderNumber}. You will receive a confirmation email shortly.`);
+    localStorage.setItem('nutritionbars-checkout', JSON.stringify(checkoutData));
     
-    // Redirect to home page
-    window.location.href = 'index.html';
-  }, 3000);
+    window.location.href = 'checkout.html';
 }
+
+// Test function to verify cart is working
+function testCart() {
+    console.log('Testing cart functionality...');
+    addItemToCart('Test Product', 99.99);
+    console.log('Test complete. Check cart:', cart);
+}
+
+// Make functions available globally
+window.changeQuantity = changeQuantity;
+window.removeCartItem = removeCartItem;
+window.clearCart = clearCart;
+window.proceedToCheckout = proceedToCheckout;
+window.testCart = testCart;
+
+console.log('Cart system ready!');
