@@ -1,51 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Combo Offer - Nutrition Bars</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo Offers - Nutrition Bars</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="bg-success text-white text-center py-3">
-    <h1>Peanut Butter Combo Offer</h1>
-    <p class="slogan">We let our ingredients do the talking.</p>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-4">
+    <div class="container">
+      <h1 class="display-4">Combo Offers</h1>
+      <p class="lead">Save more with our special combo deals!</p>
+    </div>
   </header>
+
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Menu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+      <a class="navbar-brand" href="index.html">Nutrition Bars</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navLinks">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="peanutbutter.html">Peanut Butter</a></li>
-          <li class="nav-item"><a class="nav-link" href="combo.html">Combo</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="combo.html">Combo Offers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Main Content -->
   <main class="container my-5">
-    <h2 class="text-center mb-4">Buy Any 2 Flavors & Get 12% OFF</h2>
+    <h2 class="text-center mb-5">Special Combo Deals</h2>
 
     <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow">
+      <!-- Peanut Butter Combo -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-header bg-warning text-dark text-center">
+            <h4 class="mb-0">🥜 Peanut Butter Combo</h4>
+          </div>
           <img src="images/combopeanut.jpg" class="card-img-top" alt="Peanut Butter Combo">
           <div class="card-body text-center">
             <h5 class="card-title">Pick Any 2 Peanut Butter Flavors</h5>
             <p class="card-text">
-              Choose any 2 of 8 flavors (Creamy, Crunchy, Choco, Honey, Coconut, Coffee, Classic, Salted).<br><br>
-              <strong>Combo Price: ₹262</strong> (12% OFF on ₹298)
+              Choose any 2 of our 8 delicious flavors:<br>
+              <small class="text-muted">Creamy, Crunchy, Chocolate, Honey, Coconut, Almond, Spicy, Classic</small>
             </p>
-            <button class="btn btn-success add-to-cart" data-name="Peanut Butter Combo (2 jars)" data-price="262">
+            <div class="price-section">
+              <p class="text-decoration-line-through text-muted">Regular Price: ₹298</p>
+              <p class="fw-bold text-success fs-3">Combo Price: ₹262</p>
+              <span class="badge bg-success">Save 12%</span>
+            </div>
+            <button class="btn btn-success btn-lg add-to-cart" data-name="Peanut Butter Combo (2 jars)" data-price="262">
+              Add Combo to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nutrition Bar Combo -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-header bg-info text-white text-center">
+            <h4 class="mb-0">🍫 Nutrition Bar Combo</h4>
+          </div>
+          <img src="images/Bar1.jpg" class="card-img-top" alt="Nutrition Bar Combo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Buy 5 Nutrition Bars</h5>
+            <p class="card-text">
+              Mix and match any 5 nutrition bars from our collection:<br>
+              <small class="text-muted">Almond Cocoa, Vanilla Walnut, Cashew Berry, Pistachio Oat, Date & Nut</small>
+            </p>
+            <div class="price-section">
+              <p class="text-decoration-line-through text-muted">Regular Price: ₹495</p>
+              <p class="fw-bold text-success fs-3">Combo Price: ₹425</p>
+              <span class="badge bg-success">Save 14%</span>
+            </div>
+            <button class="btn btn-success btn-lg add-to-cart" data-name="Nutrition Bar Combo (5 bars)" data-price="425">
+              Add Combo to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mixed Combo -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-header bg-danger text-white text-center">
+            <h4 class="mb-0">🎯 Mixed Combo</h4>
+          </div>
+          <img src="images/combo-mixed.jpg" class="card-img-top" alt="Mixed Combo">
+          <div class="card-body text-center">
+            <h5 class="card-title">3 Bars + 1 Peanut Butter</h5>
+            <p class="card-text">
+              Perfect starter pack:<br>
+              <small class="text-muted">3 Nutrition Bars + 1 Peanut Butter Jar of your choice</small>
+            </p>
+            <div class="price-section">
+              <p class="text-decoration-line-through text-muted">Regular Price: ₹446</p>
+              <p class="fw-bold text-success fs-3">Combo Price: ₹379</p>
+              <span class="badge bg-success">Save 15%</span>
+            </div>
+            <button class="btn btn-success btn-lg add-to-cart" data-name="Mixed Combo (3 bars + 1 peanut butter)" data-price="379">
               Add Combo to Cart
             </button>
           </div>
@@ -53,12 +131,34 @@
       </div>
     </div>
 
-    <div class="text-center mt-4">
-      <a href="peanutbutter.html" class="btn btn-outline-primary">Explore All 8 Flavors</a>
+    <!-- Benefits Section -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="alert alert-info">
+          <h4 class="alert-heading">🎁 Combo Benefits</h4>
+          <ul class="mb-0">
+            <li>Save up to 15% on combo purchases</li>
+            <li>Free shipping on all combo orders</li>
+            <li>Perfect for trying multiple flavors</li>
+            <li>Great for gifting or sharing</li>
+            <li>All products are freshly made</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+      <a href="cart.html" class="btn btn-outline-success btn-lg me-3">View Cart</a>
+      <a href="peanutbutter.html" class="btn btn-success btn-lg">Explore Individual Products</a>
     </div>
   </main>
-  <footer class="bg-success text-white text-center py-3">
-    &copy; 2025 Nutrition Bars. All rights reserved.
+
+  <!-- Footer -->
+  <footer class="bg-success text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2025 Nutrition Bars. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
