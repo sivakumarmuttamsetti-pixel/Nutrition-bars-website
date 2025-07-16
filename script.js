@@ -1,11 +1,14 @@
+console.log("script.js loaded");
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {
   const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  console.log("Event listeners attached", addToCartButtons);
 
   addToCartButtons.forEach(button => {
     button.addEventListener("click", () => {
       const name = button.getAttribute("data-name");
       const price = parseFloat(button.getAttribute("data-price"));
+      console.log("Add to Cart clicked:", name, price);
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
