@@ -1,8 +1,9 @@
 // SIMPLE WORKING CART SYSTEM
 console.log('Cart script loading...');
 
-// Global cart
-let cart = [];
+// Global cart - make it accessible from window
+window.cart = [];
+let cart = window.cart;
 
 // Wait for page to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,11 +32,13 @@ function loadCart() {
         const saved = localStorage.getItem('cart');
         if (saved) {
             cart = JSON.parse(saved);
+            window.cart = cart; // Make sure window.cart is updated
             console.log('Loaded cart:', cart);
         }
     } catch (e) {
         console.error('Error loading cart:', e);
         cart = [];
+        window.cart = [];
     }
 }
 
@@ -43,6 +46,7 @@ function loadCart() {
 function saveCart() {
     try {
         localStorage.setItem('cart', JSON.stringify(cart));
+        window.cart = cart; // Keep window.cart in sync
         console.log('Cart saved:', cart);
     } catch (e) {
         console.error('Error saving cart:', e);
@@ -209,9 +213,15 @@ function removeItem(index) {
 function clearCart() {
     if (confirm('Clear cart?')) {
         cart = [];
+        window.cart = [];
         localStorage.removeItem('cart');
         updateCounter();
         showCartItems();
+        
+        // Update test page display if it exists
+        if (window.showCart) {
+            window.showCart();
+        }
     }
 }
 
@@ -241,11 +251,18 @@ function testCart() {
     addToCart('Test Item', 99);
 }
 
+// Get cart function for external access
+function getCart() {
+    return cart;
+}
+
 // Make functions global
 window.changeQty = changeQty;
 window.removeItem = removeItem;
 window.clearCart = clearCart;
 window.proceedToCheckout = proceedToCheckout;
 window.testCart = testCart;
+window.getCart = getCart;
+window.addToCart = addToCart;
 
 console.log('Cart script loaded!');

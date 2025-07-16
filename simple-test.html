@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cart Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .btn { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .btn-success { background: #28a745; color: white; border: none; }
+        .cart-display { border: 1px solid #ccc; padding: 15px; margin: 10px 0; }
+        .console { background: #f4f4f4; padding: 10px; height: 200px; overflow-y: auto; font-family: monospace; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>🛒 Simple Cart Test</h1>
+    
+    <div>
+        <h3>Cart Counter: <span id="cart-count">0</span></h3>
+    </div>
+    
+    <div>
+        <h3>Test Products:</h3>
+        <button class="btn btn-success add-to-cart" data-name="Product A" data-price="100">Add Product A (₹100)</button>
+        <button class="btn btn-success add-to-cart" data-name="Product B" data-price="200">Add Product B (₹200)</button>
+        <button class="btn btn-success add-to-cart" data-name="Product C" data-price="300">Add Product C (₹300)</button>
+    </div>
+    
+    <div>
+        <h3>Cart Contents:</h3>
+        <div id="cart-display" class="cart-display">
+            Cart is empty
+        </div>
+    </div>
+    
+    <div>
+        <button onclick="showCart()" class="btn">Show Cart</button>
+        <button onclick="clearCart()" class="btn">Clear Cart</button>
+    </div>
+    
+    <div>
+        <h3>Console:</h3>
+        <div id="console" class="console"></div>
+    </div>
+    
+    <script>
+        // Simple cart system built into this page
+        let cart = [];
+        
+        // Console logging
+        function log(message) {
+            console.log(message);
+            const consoleDiv = document.getElementById('console');
+            consoleDiv.innerHTML += '<div>' + message + '</div>';
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+        
+        // Load cart from localStorage
+        function loadCart() {
+            try {
+                const saved = localStorage.getItem('simple-cart');
+                if (saved) {
+                    cart = JSON.parse(saved);
+                    log('Loaded cart: ' + JSON.stringify(cart));
+                }
+            } catch (e) {
+                log('Error loading cart: ' + e);
+                cart = [];
+            }
+        }
+        
+        // Save cart to localStorage
+        function saveCart() {
+            try {
+                localStorage.setItem('simple-cart', JSON.stringify(cart));
+                log('Saved cart: ' + JSON.stringify(cart));
+            } catch (e) {
+                log('Error saving cart: ' + e);
+            }
+        }
+        
+        // Add to cart
+        function addToCart(name, price) {
+            log('Adding to cart: ' + name + ' - ₹' + price);
+            
+            // Find existing item
+            let found = false;
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].name === name) {
+                    cart[i].quantity += 1;
+                    found = true;
+                    break;
+                }
+            }
+            
+            // If not found, add new
+            if (!found) {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            saveCart();
+            updateCounter();
+            showCart();
+            alert(name + ' added to cart!');
+        }
+        
+        // Update counter
+        function updateCounter() {
+            let total = 0;
+            for (let i = 0; i < cart.length; i++) {
+                total += cart[i].quantity;
+            }
+            document.getElementById('cart-count').textContent = total;
+            log('Counter updated to: ' + total);
+        }
+        
+        // Show cart
+        function showCart() {
+            const display = document.getElementById('cart-display');
+            
+            if (cart.length === 0) {
+                display.innerHTML = 'Cart is empty';
+                return;
+            }
+            
+            let html = '<ul>';
+            let total = 0;
+            
+            for (let i = 0; i < cart.length; i++) {
+                const item = cart[i];
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                html += '<li>' + item.name + ' x ' + item.quantity + ' = ₹' + subtotal + '</li>';
+            }
+            
+            html += '</ul>';
+            html += '<strong>Total: ₹' + total + '</strong>';
+            display.innerHTML = html;
+        }
+        
+        // Clear cart
+        function clearCart() {
+            if (confirm('Clear cart?')) {
+                cart = [];
+                localStorage.removeItem('simple-cart');
+                updateCounter();
+                showCart();
+                log('Cart cleared');
+            }
+        }
+        
+        // Setup buttons
+        function setupButtons() {
+            const buttons = document.querySelectorAll('.add-to-cart');
+            log('Found ' + buttons.length + ' buttons');
+            
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    addToCart(name, price);
+                });
+            });
+        }
+        
+        // Initialize
+        log('Starting cart system...');
+        loadCart();
+        setupButtons();
+        updateCounter();
+        showCart();
+        log('Cart system ready!');
+    </script>
+</body>
+</html>

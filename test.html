@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Cart Test Page</h1>
+        <h1>🛒 Cart Test Page</h1>
         
         <div class="alert alert-info">
             <h4>Cart Counter: <span id="cart-count">0</span></h4>
@@ -51,18 +51,27 @@
             
             <div class="col-md-6">
                 <h3>Cart Contents</h3>
-                <div id="cart-display">
+                <div id="cart-display" class="border p-3 mb-3">
                     <p>Cart is empty</p>
                 </div>
                 
-                <button onclick="showCart()" class="btn btn-info">Show Cart</button>
-                <button onclick="clearCart()" class="btn btn-danger">Clear Cart</button>
+                <div class="d-grid gap-2">
+                    <button onclick="showCart()" class="btn btn-info">Show Cart</button>
+                    <button onclick="clearCart()" class="btn btn-danger">Clear Cart</button>
+                    <button onclick="testDirectAdd()" class="btn btn-warning">Direct Add Test</button>
+                </div>
             </div>
         </div>
         
         <div class="mt-4">
             <h4>Console Log:</h4>
             <div id="console-log" class="bg-light p-3" style="height: 200px; overflow-y: auto;"></div>
+        </div>
+        
+        <div class="mt-4">
+            <h4>Debug Info:</h4>
+            <button onclick="debugCart()" class="btn btn-secondary">Debug Cart</button>
+            <div id="debug-info" class="bg-light p-3 mt-2"></div>
         </div>
     </div>
     
@@ -81,19 +90,75 @@
         // Function to show cart contents
         function showCart() {
             const cartDisplay = document.getElementById('cart-display');
-            if (cart.length === 0) {
+            
+            // Check if cart is available
+            if (typeof window.cart === 'undefined') {
+                cartDisplay.innerHTML = '<p style="color: red;">❌ Cart not loaded yet! Wait a moment and try again.</p>';
+                console.log('Cart not loaded yet');
+                return;
+            }
+            
+            const cart = window.cart;
+            console.log('Showing cart, current cart:', cart);
+            
+            if (!cart || cart.length === 0) {
                 cartDisplay.innerHTML = '<p>Cart is empty</p>';
             } else {
-                let html = '<ul>';
+                let html = '<ul class="list-group">';
+                let total = 0;
                 for (let i = 0; i < cart.length; i++) {
-                    html += '<li>' + cart[i].name + ' - ₹' + cart[i].price + ' x ' + cart[i].quantity + '</li>';
+                    const item = cart[i];
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    html += '<li class="list-group-item d-flex justify-content-between">';
+                    html += '<span>' + item.name + ' x ' + item.quantity + '</span>';
+                    html += '<span>₹' + subtotal + '</span>';
+                    html += '</li>';
                 }
                 html += '</ul>';
+                html += '<div class="mt-2"><strong>Total: ₹' + total + '</strong></div>';
                 cartDisplay.innerHTML = html;
             }
         }
+        
+        // Test direct add function
+        function testDirectAdd() {
+            if (typeof window.addToCart === 'function') {
+                window.addToCart('Direct Test Item', 123);
+                setTimeout(showCart, 100); // Show cart after adding
+            } else {
+                alert('addToCart function not available!');
+            }
+        }
+        
+        // Debug function
+        function debugCart() {
+            const debugDiv = document.getElementById('debug-info');
+            let html = '';
+            
+            html += '<strong>Debug Information:</strong><br>';
+            html += 'window.cart exists: ' + (typeof window.cart !== 'undefined') + '<br>';
+            html += 'window.cart value: ' + JSON.stringify(window.cart) + '<br>';
+            html += 'window.addToCart exists: ' + (typeof window.addToCart === 'function') + '<br>';
+            html += 'window.getCart exists: ' + (typeof window.getCart === 'function') + '<br>';
+            html += 'localStorage cart: ' + localStorage.getItem('cart') + '<br>';
+            
+            debugDiv.innerHTML = html;
+        }
+        
+        // Auto-update cart display every 2 seconds
+        setInterval(function() {
+            if (typeof window.cart !== 'undefined') {
+                showCart();
+            }
+        }, 2000);
+        
+        // Show cart when page loads
+        window.addEventListener('load', function() {
+            setTimeout(showCart, 500);
+        });
     </script>
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
