@@ -3,188 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Nutrition Bars</title>
+    <title>Contact Us - NutriBar Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Contact Us</h1>
-            <p class="lead">Get in touch with our team</p>
-        </div>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Hero Section -->
+    <section class="contact-hero py-5" style="margin-top: 80px;">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Nutrition Bars</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="combo.html">Combo Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
-                </ul>
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="hero-title">Get in Touch</h1>
+                    <p class="hero-subtitle">We're here to help you with any questions about our premium nutrition products</p>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Main Content -->
-    <main class="container my-5">
-        <div class="row">
-            <!-- Contact Form -->
-            <div class="col-lg-8 mb-4">
-                <div class="card shadow">
-                    <div class="card-header bg-success text-white">
-                        <h3 class="mb-0">Send us a Message</h3>
-                    </div>
-                    <div class="card-body">
-                        <form id="contact-form">
+    <!-- Contact Section -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5">
+                    <div class="contact-form-section">
+                        <h3 class="mb-4">Send us a Message</h3>
+                        <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    <input type="text" class="form-control" id="firstName" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    <input type="text" class="form-control" id="lastName" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="email" class="form-label">Email Address *</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control" id="email" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                    <input type="tel" class="form-control" id="phone">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Subject *</label>
-                                <select class="form-select" id="subject" name="subject" required>
-                                    <option value="">Select a subject...</option>
-                                    <option value="product-inquiry">Product Inquiry</option>
-                                    <option value="order-support">Order Support</option>
-                                    <option value="shipping">Shipping Question</option>
-                                    <option value="feedback">Feedback</option>
+                                <select class="form-select" id="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="product">Product Information</option>
+                                    <option value="order">Order Support</option>
+                                    <option value="wholesale">Wholesale/Bulk Orders</option>
+                                    <option value="feedback">Feedback & Suggestions</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
-                                <label class="form-check-label" for="newsletter">
-                                    Subscribe to our newsletter for updates and special offers
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-lg">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
-            </div>
-
-            <!-- Contact Information -->
-            <div class="col-lg-4">
-                <div class="card shadow mb-4">
-                    <div class="card-header bg-dark text-white">
-                        <h4 class="mb-0">Contact Information</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-info">
-                            <div class="mb-3">
-                                <h6><i class="fas fa-map-marker-alt"></i> Address</h6>
-                                <p class="mb-0">123 Nutrition Street<br>
-                                Healthy City, HC 12345<br>
-                                India</p>
+                
+                <div class="col-lg-4">
+                    <div class="contact-info-section">
+                        <h3 class="mb-4">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="mb-3">
-                                <h6><i class="fas fa-phone"></i> Phone</h6>
-                                <p class="mb-0">+91 99999 99999</p>
+                            <div class="contact-details">
+                                <h5>Our Location</h5>
+                                <p>123 Health Street<br>
+                                Nutrition District<br>
+                                Bangalore, Karnataka 560001</p>
                             </div>
-                            <div class="mb-3">
-                                <h6><i class="fas fa-envelope"></i> Email</h6>
-                                <p class="mb-0">info@nutritionbars.com</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            <div class="mb-3">
-                                <h6><i class="fas fa-clock"></i> Business Hours</h6>
-                                <p class="mb-0">
-                                    Mon - Fri: 9:00 AM - 6:00 PM<br>
-                                    Sat: 10:00 AM - 4:00 PM<br>
-                                    Sun: Closed
-                                </p>
+                            <div class="contact-details">
+                                <h5>Phone Numbers</h5>
+                                <p>Customer Service: +91 98765 43210<br>
+                                Wholesale Orders: +91 98765 43211</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email Addresses</h5>
+                                <p>General: info@nutribarpro.com<br>
+                                Support: support@nutribarpro.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Business Hours</h5>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 9:00 AM - 4:00 PM<br>
+                                Sunday: Closed</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- FAQ Section -->
-                <div class="card shadow">
-                    <div class="card-header bg-info text-white">
-                        <h4 class="mb-0">Frequently Asked Questions</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="faqAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading1">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                        What are the ingredients in your products?
-                                    </button>
-                                </h2>
-                                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        All our products are made with natural ingredients including nuts, seeds, dates, and natural flavors. No artificial additives or preservatives.
-                                    </div>
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                    What ingredients are used in your nutrition bars?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our nutrition bars are made with 100% natural ingredients including nuts, dates, oats, seeds, and natural sweeteners. We never use artificial preservatives, colors, or flavors.
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                        How long do products stay fresh?
-                                    </button>
-                                </h2>
-                                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Our nutrition bars stay fresh for 6 months, and peanut butter for 12 months when stored in a cool, dry place.
-                                    </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                    How should I store the products?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Store in a cool, dry place away from direct sunlight. Nutrition bars have a shelf life of 6 months, while peanut butter can last up to 12 months when unopened.
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                        Do you offer free shipping?
-                                    </button>
-                                </h2>
-                                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Yes! We offer free shipping on all orders above ₹500 and on all combo purchases.
-                                    </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    Do you offer bulk or wholesale pricing?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We offer special pricing for bulk orders (50+ units) and wholesale partnerships. Contact us at wholesale@nutribarpro.com for more information.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                    What is your return policy?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a 30-day return policy for unopened products. If you're not satisfied with your purchase, contact us for a full refund or exchange.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                    Are your products suitable for people with allergies?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Many of our products contain nuts. Please check the ingredient list carefully. We also offer gluten-free options and can provide detailed allergen information for each product.
                                 </div>
                             </div>
                         </div>
@@ -192,38 +247,164 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-success text-white text-center py-4">
+    <footer class="footer-section py-5">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Nutrition Bars. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
     <script>
-        // Contact form handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
             
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            // Show success message
+            showNotification('✅ Thank you for your message! We\'ll get back to you soon.', 'success');
             
-            // Simulate form submission
-            setTimeout(() => {
-                alert('Thank you for your message! We will get back to you within 24 hours.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Reset form
+            this.reset();
         });
     </script>
+    
+    <style>
+        .contact-hero {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .contact-info-section {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-details p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        .accordion-button {
+            background: white;
+            border: none;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: var(--light-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            background: white;
+            color: var(--text-color);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
+        }
+        
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
+        }
+    </style>
 </body>
 </html>

@@ -3,160 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrition Bars - Healthy Living</title>
+    <title>NutriBar Pro - Premium Nutrition Bars</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Nutrition Bars</h1>
-            <p class="lead">We let our ingredients do the talking.</p>
-        </div>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Nutrition Bars</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="combo.html">Combo Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
-    <section class="hero-section bg-light py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold">Healthy Nutrition Bars</h2>
-                    <p class="lead">Made with natural ingredients, packed with protein and energy. Perfect for your active lifestyle.</p>
-                    <a href="products.html" class="btn btn-success btn-lg">Shop Now</a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://via.placeholder.com/500x300/28a745/ffffff?text=Nutrition+Bars" alt="Nutrition Bars" class="img-fluid rounded">
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Premium Nutrition Bars</h1>
+                            <p class="hero-subtitle">Fuel your body with our handcrafted, natural nutrition bars. Made with premium ingredients for peak performance.</p>
+                            <div class="hero-buttons">
+                                <a href="products.html" class="btn btn-primary btn-lg me-3">
+                                    <i class="fas fa-shopping-bag me-2"></i>Shop Now
+                                </a>
+                                <a href="#features" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-play-circle me-2"></i>Learn More
+                                </a>
+                            </div>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <h3>50k+</h3>
+                                    <p>Happy Customers</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>100%</h3>
+                                    <p>Natural Ingredients</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>15+</h3>
+                                    <p>Flavors Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="https://via.placeholder.com/600x500/28a745/ffffff?text=Premium+Nutrition+Bars" alt="Premium Nutrition Bars" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="py-5">
+    <!-- Features Section -->
+    <section id="features" class="features-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Why Choose NutriBar Pro?</h2>
+                    <p class="section-subtitle">Experience the difference of premium nutrition</p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Almond+Cocoa" class="card-img-top" alt="Almond Cocoa Crunch">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Almond Cocoa Crunch</h5>
-                            <p class="card-text">Rich cocoa flavor with crunchy almonds</p>
-                            <p class="fw-bold text-success fs-4">₹99</p>
-                            <button class="btn btn-success add-to-cart" data-name="Almond Cocoa Crunch" data-price="99">
-                                Add to Cart
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>100% Natural</h4>
+                        <p>Made with organic ingredients, no artificial preservatives or additives</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h4>High Protein</h4>
+                        <p>20g+ protein per bar to fuel your workouts and recovery</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Heart Healthy</h4>
+                        <p>Low sugar, high fiber, and packed with essential nutrients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">Discover our most popular nutrition bars</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Chocolate+Almond" alt="Chocolate Almond Crunch">
+                            <div class="product-badge">Best Seller</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Chocolate Almond Crunch</h5>
+                            <p class="product-description">Rich dark chocolate with roasted almonds and sea salt</p>
+                            <div class="product-price">₹129</div>
+                            <button class="btn btn-primary add-to-cart" data-name="Chocolate Almond Crunch" data-price="129">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Creamy+Peanut+Butter" class="card-img-top" alt="Creamy Peanut Butter">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Creamy Peanut Butter</h5>
-                            <p class="card-text">Smooth and sugar-free peanut butter</p>
-                            <p class="fw-bold text-success fs-4">₹149</p>
-                            <button class="btn btn-success add-to-cart" data-name="Creamy Peanut Butter" data-price="149">
-                                Add to Cart
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Peanut+Butter" alt="Peanut Butter Protein">
+                            <div class="product-badge">New</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Peanut Butter Protein</h5>
+                            <p class="product-description">Creamy peanut butter with 25g protein boost</p>
+                            <div class="product-price">₹149</div>
+                            <button class="btn btn-primary add-to-cart" data-name="Peanut Butter Protein" data-price="149">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow h-100">
-                        <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Combo+Offer" class="card-img-top" alt="Combo Offer">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Combo Offer</h5>
-                            <p class="card-text">Buy 2 peanut butter jars, get 12% off</p>
-                            <p class="fw-bold text-success fs-4">₹262</p>
-                            <button class="btn btn-success add-to-cart" data-name="Peanut Butter Combo (2 jars)" data-price="262">
-                                Add to Cart
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200/45b7d1/ffffff?text=Berry+Blast" alt="Mixed Berry Blast">
+                            <div class="product-badge">Organic</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Mixed Berry Blast</h5>
+                            <p class="product-description">Antioxidant-rich berries with cashews and dates</p>
+                            <div class="product-price">₹139</div>
+                            <button class="btn btn-primary add-to-cart" data-name="Mixed Berry Blast" data-price="139">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="products.html" class="btn btn-outline-success btn-lg">View All Products</a>
+                <a href="products.html" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-arrow-right me-2"></i>View All Products
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-5 bg-light">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Why Choose Our Products?</h2>
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Join thousands of satisfied customers</p>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="display-1 text-success">🌱</div>
-                        <h4>100% Natural</h4>
-                        <p>Made with natural ingredients, no artificial additives</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Best nutrition bars I've ever tried! Perfect for my morning workouts."</p>
+                        <div class="testimonial-author">
+                            <h6>Sarah Johnson</h6>
+                            <small>Fitness Enthusiast</small>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="display-1 text-success">💪</div>
-                        <h4>High Protein</h4>
-                        <p>Packed with protein to fuel your active lifestyle</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Amazing taste and quality. I've made them part of my daily routine."</p>
+                        <div class="testimonial-author">
+                            <h6>Mike Chen</h6>
+                            <small>Professional Athlete</small>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="display-1 text-success">🚫</div>
-                        <h4>No Sugar Added</h4>
-                        <p>Naturally sweetened, no added sugars or preservatives</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Finally found nutrition bars that actually taste good and are healthy!"</p>
+                        <div class="testimonial-author">
+                            <h6>Emily Davis</h6>
+                            <small>Nutritionist</small>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="cta-title">Ready to Transform Your Nutrition?</h2>
+                    <p class="cta-subtitle">Join thousands of health-conscious individuals who trust NutriBar Pro</p>
+                    <a href="products.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-shopping-bag me-2"></i>Start Shopping Now
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-success text-white text-center py-4">
+    <footer class="footer-section py-5">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Nutrition Bars. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Test Cart Button (Remove this after testing) -->
-    <button onclick="testCart()" class="btn btn-warning position-fixed" style="bottom: 20px; right: 20px; z-index: 1000;">
-        Test Cart
-    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

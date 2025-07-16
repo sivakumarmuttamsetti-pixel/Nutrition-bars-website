@@ -3,161 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Nutrition Bars</title>
+    <title>Premium Nutrition Bars - NutriBar Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Our Products</h1>
-            <p class="lead">We let our ingredients do the talking.</p>
-        </div>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Hero Section -->
+    <section class="page-hero">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Nutrition Bars</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="combo.html">Combo Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container my-5">
-        <h2 class="text-center mb-5">Our Nutrition Bar Flavors</h2>
-        
-        <div class="row">
-            <!-- Product 1: Almond Cocoa Crunch -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Almond+Cocoa" class="card-img-top" alt="Almond Cocoa Crunch">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Almond Cocoa Crunch</h5>
-                        <p class="card-text">Rich cocoa flavor with crunchy almonds. High in protein and natural energy.</p>
-                        <p class="fw-bold text-success fs-4">₹99</p>
-                        <button class="btn btn-success add-to-cart" data-name="Almond Cocoa Crunch" data-price="99">
-                            Add to Cart
-                        </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Premium Nutrition Bars</h1>
+                    <p class="hero-subtitle">Discover our complete range of handcrafted nutrition bars, made with the finest natural ingredients for optimal health and performance.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Flavors</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20g+</span>
+                            <span class="stat-label">Protein</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Natural</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Product 2: Vanilla Walnut Delight -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Vanilla+Walnut" class="card-img-top" alt="Vanilla Walnut Delight">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Vanilla Walnut Delight</h5>
-                        <p class="card-text">Smooth vanilla taste with premium walnuts. Perfect for a healthy snack.</p>
-                        <p class="fw-bold text-success fs-4">₹99</p>
-                        <button class="btn btn-success add-to-cart" data-name="Vanilla Walnut Delight" data-price="99">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3: Cashew Berry Boost -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Cashew+Berry" class="card-img-top" alt="Cashew Berry Boost">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Cashew Berry Boost</h5>
-                        <p class="card-text">Antioxidant-rich berries with creamy cashews. Boosts energy naturally.</p>
-                        <p class="fw-bold text-success fs-4">₹99</p>
-                        <button class="btn btn-success add-to-cart" data-name="Cashew Berry Boost" data-price="99">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4: Pistachio Oat Bar -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Pistachio+Oat" class="card-img-top" alt="Pistachio Oat Bar">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Pistachio Oat Bar</h5>
-                        <p class="card-text">Wholesome oats with premium pistachios. Great for sustained energy.</p>
-                        <p class="fw-bold text-success fs-4">₹99</p>
-                        <button class="btn btn-success add-to-cart" data-name="Pistachio Oat Bar" data-price="99">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5: Date & Nut Energy Bar -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Date+%26+Nut" class="card-img-top" alt="Date & Nut Energy Bar">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Date & Nut Energy Bar</h5>
-                        <p class="card-text">Natural dates with mixed nuts. Pure energy from nature's finest ingredients.</p>
-                        <p class="fw-bold text-success fs-4">₹99</p>
-                        <button class="btn btn-success add-to-cart" data-name="Date & Nut Energy Bar" data-price="99">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6: Protein Power Bar -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow h-100">
-                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Protein+Power" class="card-img-top" alt="Protein Power Bar">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Protein Power Bar</h5>
-                        <p class="card-text">High-protein blend with nuts and seeds. Perfect for post-workout recovery.</p>
-                        <p class="fw-bold text-success fs-4">₹109</p>
-                        <button class="btn btn-success add-to-cart" data-name="Protein Power Bar" data-price="109">
-                            Add to Cart
-                        </button>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=Premium+Nutrition+Bars" alt="Premium Nutrition Bars" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Call to Action -->
-        <div class="text-center mt-5">
-            <a href="cart.html" class="btn btn-outline-success btn-lg me-3">View Cart</a>
-            <a href="peanutbutter.html" class="btn btn-success btn-lg">Try Our Peanut Butter</a>
+    <!-- Filter Section -->
+    <section class="filter-section py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="filter-buttons">
+                        <button class="btn btn-outline-primary active" data-filter="all">All Products</button>
+                        <button class="btn btn-outline-primary" data-filter="protein">High Protein</button>
+                        <button class="btn btn-outline-primary" data-filter="organic">Organic</button>
+                        <button class="btn btn-outline-primary" data-filter="keto">Keto Friendly</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sort-dropdown">
+                        <select class="form-select" id="sortProducts">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section py-5">
+        <div class="container">
+            <div class="row" id="products-grid">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="protein">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/ff6b6b/ffffff?text=Chocolate+Almond" alt="Chocolate Almond Crunch">
+                            <div class="product-badge">Best Seller</div>
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Chocolate Almond Crunch</h5>
+                            <p class="product-description">Rich dark chocolate with roasted almonds and sea salt. 22g protein per bar.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">High Protein</span>
+                                <span class="feature-tag">Gluten Free</span>
+                            </div>
+                            <div class="product-price">₹129</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(247)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Chocolate Almond Crunch" data-price="129">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="protein">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/4ecdc4/ffffff?text=Peanut+Butter" alt="Peanut Butter Protein">
+                            <div class="product-badge">New</div>
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Peanut Butter Protein</h5>
+                            <p class="product-description">Creamy peanut butter with 25g protein boost. Perfect post-workout fuel.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">High Protein</span>
+                                <span class="feature-tag">Natural</span>
+                            </div>
+                            <div class="product-price">₹149</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(183)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Peanut Butter Protein" data-price="149">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="organic">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/45b7d1/ffffff?text=Berry+Blast" alt="Mixed Berry Blast">
+                            <div class="product-badge">Organic</div>
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Mixed Berry Blast</h5>
+                            <p class="product-description">Antioxidant-rich berries with cashews and dates. Organic certified.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Organic</span>
+                                <span class="feature-tag">Antioxidants</span>
+                            </div>
+                            <div class="product-price">₹139</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Mixed Berry Blast" data-price="139">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="keto">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/f093fb/ffffff?text=Coconut+Vanilla" alt="Coconut Vanilla">
+                            <div class="product-badge">Keto</div>
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Coconut Vanilla</h5>
+                            <p class="product-description">Creamy coconut and vanilla with MCT oil. Perfect for keto diet.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Keto</span>
+                                <span class="feature-tag">MCT Oil</span>
+                            </div>
+                            <div class="product-price">₹159</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(92)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Coconut Vanilla" data-price="159">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="protein">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/96ceb4/ffffff?text=Cashew+Cacao" alt="Cashew Cacao">
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Cashew Cacao</h5>
+                            <p class="product-description">Rich cacao with premium cashews. Naturally energizing and delicious.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Raw Cacao</span>
+                                <span class="feature-tag">Energy</span>
+                            </div>
+                            <div class="product-price">₹145</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(134)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Cashew Cacao" data-price="145">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="organic">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/ffeaa7/ffffff?text=Date+Walnut" alt="Date Walnut">
+                            <div class="product-badge">Organic</div>
+                            <div class="product-overlay">
+                                <button class="btn btn-outline-light btn-sm me-2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-outline-light btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Date Walnut</h5>
+                            <p class="product-description">Naturally sweet dates with omega-rich walnuts. No added sugars.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">No Sugar</span>
+                                <span class="feature-tag">Omega-3</span>
+                            </div>
+                            <div class="product-price">₹135</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Date Walnut" data-price="135">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5>Free Shipping</h5>
+                        <p>On orders above ₹500</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h5>Premium Quality</h5>
+                        <p>100% natural ingredients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5>24/7 Support</h5>
+                        <p>Always here to help</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h5>Easy Returns</h5>
+                        <p>30-day return policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-success text-white text-center py-4">
+    <footer class="footer-section py-5">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Nutrition Bars. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Product filtering and sorting
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-buttons .btn');
+            const sortSelect = document.getElementById('sortProducts');
+            const productItems = document.querySelectorAll('.product-item');
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    productItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            item.style.animation = 'fadeIn 0.5s ease-in-out';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Sort functionality
+            sortSelect.addEventListener('change', function() {
+                const sortBy = this.value;
+                const productsGrid = document.getElementById('products-grid');
+                const products = Array.from(productItems);
+                
+                products.sort((a, b) => {
+                    const priceA = parseInt(a.querySelector('.product-price').textContent.replace('₹', ''));
+                    const priceB = parseInt(b.querySelector('.product-price').textContent.replace('₹', ''));
+                    const nameA = a.querySelector('.product-title').textContent;
+                    const nameB = b.querySelector('.product-title').textContent;
+                    
+                    switch(sortBy) {
+                        case 'price-low':
+                            return priceA - priceB;
+                        case 'price-high':
+                            return priceB - priceA;
+                        case 'name':
+                            return nameA.localeCompare(nameB);
+                        default:
+                            return 0;
+                    }
+                });
+                
+                // Re-append sorted products
+                products.forEach(product => {
+                    productsGrid.appendChild(product);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

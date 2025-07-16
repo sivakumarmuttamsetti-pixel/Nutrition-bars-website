@@ -3,191 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peanut Butter - Nutrition Bars</title>
+    <title>Premium Peanut Butter - NutriBar Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Peanut Butter Collection</h1>
-            <p class="lead">Natural, healthy, and delicious peanut butter varieties</p>
-        </div>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Hero Section -->
+    <section class="page-hero">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Nutrition Bars</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="peanutbutter.html">Peanut Butter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="combo.html">Combo Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container my-5">
-        <h2 class="text-center mb-5">Our Peanut Butter Flavors</h2>
-        
-        <div class="row g-4">
-            <!-- Product 1: Creamy -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Creamy" class="card-img-top" alt="Creamy Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Creamy</h5>
-                        <p class="card-text">Smooth & sugar-free peanut butter with natural taste.</p>
-                        <p class="fw-bold text-success fs-4">₹149</p>
-                        <button class="btn btn-success add-to-cart" data-name="Creamy Peanut Butter" data-price="149">
-                            Add to Cart
-                        </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Premium Peanut Butter</h1>
+                    <p class="hero-subtitle">Discover our artisanal peanut butter collection - 100% natural, no preservatives, and packed with protein for your healthy lifestyle.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Varieties</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Additives</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Peanuts</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Product 2: Crunchy -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Crunchy" class="card-img-top" alt="Crunchy Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Crunchy</h5>
-                        <p class="card-text">Nutty, crunchy texture with peanut pieces.</p>
-                        <p class="fw-bold text-success fs-4">₹149</p>
-                        <button class="btn btn-success add-to-cart" data-name="Crunchy Peanut Butter" data-price="149">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3: Chocolate -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Chocolate" class="card-img-top" alt="Chocolate Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Chocolate</h5>
-                        <p class="card-text">Dark cocoa blended with smooth peanut butter.</p>
-                        <p class="fw-bold text-success fs-4">₹159</p>
-                        <button class="btn btn-success add-to-cart" data-name="Chocolate Peanut Butter" data-price="159">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4: Honey -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Honey" class="card-img-top" alt="Honey Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Honey</h5>
-                        <p class="card-text">Natural honey infused with creamy peanut butter.</p>
-                        <p class="fw-bold text-success fs-4">₹159</p>
-                        <button class="btn btn-success add-to-cart" data-name="Honey Peanut Butter" data-price="159">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5: Coconut -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Coconut" class="card-img-top" alt="Coconut Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Coconut</h5>
-                        <p class="card-text">Tropical nutty flavor with coconut pieces.</p>
-                        <p class="fw-bold text-success fs-4">₹159</p>
-                        <button class="btn btn-success add-to-cart" data-name="Coconut Peanut Butter" data-price="159">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6: Almond Blend -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Almond" class="card-img-top" alt="Almond Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Almond Blend</h5>
-                        <p class="card-text">With added almond protein for extra nutrition.</p>
-                        <p class="fw-bold text-success fs-4">₹169</p>
-                        <button class="btn btn-success add-to-cart" data-name="Almond Peanut Butter" data-price="169">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 7: Spicy -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Spicy" class="card-img-top" alt="Spicy Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spicy</h5>
-                        <p class="card-text">Chili-infused peanut butter for a spicy kick.</p>
-                        <p class="fw-bold text-success fs-4">₹159</p>
-                        <button class="btn btn-success add-to-cart" data-name="Spicy Peanut Butter" data-price="159">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 8: Classic -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow">
-                    <img src="https://via.placeholder.com/250x200/28a745/ffffff?text=Classic" class="card-img-top" alt="Classic Peanut Butter">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Classic</h5>
-                        <p class="card-text">Traditional peanut butter with no additives.</p>
-                        <p class="fw-bold text-success fs-4">₹139</p>
-                        <button class="btn btn-success add-to-cart" data-name="Classic Peanut Butter" data-price="139">
-                            Add to Cart
-                        </button>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://via.placeholder.com/600x400/f39c12/ffffff?text=Premium+Peanut+Butter" alt="Premium Peanut Butter" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Call to Action -->
-        <div class="text-center mt-5">
-            <a href="cart.html" class="btn btn-outline-success btn-lg me-3">View Cart</a>
-            <a href="combo.html" class="btn btn-success btn-lg">Check Combo Offers</a>
+    <!-- Products Section -->
+    <section class="products-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/daa520/ffffff?text=Creamy+Classic" alt="Creamy Classic">
+                            <div class="product-badge">Best Seller</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Creamy Classic</h5>
+                            <p class="product-description">Smooth and creamy peanut butter made from roasted peanuts. Perfect for all ages.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Creamy</span>
+                                <span class="feature-tag">No Sugar</span>
+                            </div>
+                            <div class="product-price">₹149</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Creamy Classic Peanut Butter" data-price="149">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/cd853f/ffffff?text=Crunchy+Delight" alt="Crunchy Delight">
+                            <div class="product-badge">Popular</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Crunchy Delight</h5>
+                            <p class="product-description">Crunchy peanut butter with roasted peanut pieces for extra texture and flavor.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Crunchy</span>
+                                <span class="feature-tag">Roasted</span>
+                            </div>
+                            <div class="product-price">₹149</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Crunchy Delight Peanut Butter" data-price="149">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/8b4513/ffffff?text=Organic+Pure" alt="Organic Pure">
+                            <div class="product-badge">Organic</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Organic Pure</h5>
+                            <p class="product-description">Certified organic peanut butter made from sustainably grown peanuts.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Organic</span>
+                                <span class="feature-tag">Sustainable</span>
+                            </div>
+                            <div class="product-price">₹169</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Organic Pure Peanut Butter" data-price="169">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/d2691e/ffffff?text=Honey+Roasted" alt="Honey Roasted">
+                            <div class="product-badge">Sweet</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Honey Roasted</h5>
+                            <p class="product-description">Sweet peanut butter with natural honey for a delightful taste experience.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Honey</span>
+                                <span class="feature-tag">Natural</span>
+                            </div>
+                            <div class="product-price">₹159</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Honey Roasted Peanut Butter" data-price="159">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/6b4423/ffffff?text=Dark+Chocolate" alt="Dark Chocolate">
+                            <div class="product-badge">Premium</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Dark Chocolate</h5>
+                            <p class="product-description">Rich peanut butter blended with premium dark chocolate for indulgent taste.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Chocolate</span>
+                                <span class="feature-tag">Premium</span>
+                            </div>
+                            <div class="product-price">₹169</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Dark Chocolate Peanut Butter" data-price="169">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/ff6347/ffffff?text=Spicy+Kick" alt="Spicy Kick">
+                            <div class="product-badge">Hot</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Spicy Kick</h5>
+                            <p class="product-description">Bold peanut butter with a spicy twist for adventurous taste buds.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Spicy</span>
+                                <span class="feature-tag">Bold</span>
+                            </div>
+                            <div class="product-price">₹159</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Spicy Kick Peanut Butter" data-price="159">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/20b2aa/ffffff?text=Protein+Power" alt="Protein Power">
+                            <div class="product-badge">Protein</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Protein Power</h5>
+                            <p class="product-description">High-protein peanut butter enriched with whey protein for fitness enthusiasts.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">High Protein</span>
+                                <span class="feature-tag">Whey</span>
+                            </div>
+                            <div class="product-price">₹179</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Protein Power Peanut Butter" data-price="179">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/350x250/9370db/ffffff?text=Mixed+Berries" alt="Mixed Berries">
+                            <div class="product-badge">Fruity</div>
+                        </div>
+                        <div class="product-content">
+                            <h5 class="product-title">Mixed Berries</h5>
+                            <p class="product-description">Peanut butter with dried mixed berries for a fruity and healthy combination.</p>
+                            <div class="product-features">
+                                <span class="feature-tag">Berries</span>
+                                <span class="feature-tag">Antioxidants</span>
+                            </div>
+                            <div class="product-price">₹169</div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Mixed Berries Peanut Butter" data-price="169">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="section-title">Why Choose Our Peanut Butter?</h2>
+                    <p class="section-subtitle">Premium quality you can taste</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h5>100% Natural</h5>
+                        <p>No artificial preservatives or additives</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h5>High Protein</h5>
+                        <p>Rich in protein for muscle building</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h5>Heart Healthy</h5>
+                        <p>Good source of healthy fats</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5>Premium Quality</h5>
+                        <p>Made from finest selected peanuts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-success text-white text-center py-4">
+    <footer class="footer-section py-5">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Nutrition Bars. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Deals - NutriBar Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Exclusive Combo Deals</h1>
+                    <p class="hero-subtitle">Save more with our specially curated combo packages. Perfect for families, fitness enthusiasts, and health-conscious individuals.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">Up to 30%</span>
+                            <span class="stat-label">Savings</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Combo Options</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Free</span>
+                            <span class="stat-label">Shipping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://via.placeholder.com/600x400/e74c3c/ffffff?text=Combo+Deals" alt="Combo Deals" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Combo 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-danger">Save ₹75</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/ff6b6b/ffffff?text=Starter+Pack" alt="Starter Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Starter Pack</h4>
+                            <p class="deal-description">Perfect for trying different flavors</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>3 Mixed Nutrition Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>1 Creamy Peanut Butter</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Free Shipping</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹446</span>
+                                <span class="deal-price">₹371</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Starter Pack Combo" data-price="371">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-warning">Save ₹125</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/4ecdc4/ffffff?text=Family+Pack" alt="Family Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Family Pack</h4>
+                            <p class="deal-description">Great value for families</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>6 Assorted Nutrition Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>2 Peanut Butter Jars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Free Shipping + Gift</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹892</span>
+                                <span class="deal-price">₹767</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Family Pack Combo" data-price="767">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-success">Save ₹200</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/45b7d1/ffffff?text=Premium+Pack" alt="Premium Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Premium Pack</h4>
+                            <p class="deal-description">Ultimate nutrition package</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>12 Premium Nutrition Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>3 Gourmet Peanut Butter</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Free Shipping + Premium Gift</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹1784</span>
+                                <span class="deal-price">₹1584</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Premium Pack Combo" data-price="1584">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combo 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-info">Save ₹90</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/f093fb/ffffff?text=Fitness+Pack" alt="Fitness Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Fitness Pack</h4>
+                            <p class="deal-description">Perfect for workout enthusiasts</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>4 High-Protein Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>1 Protein Peanut Butter</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Fitness Guide</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹575</span>
+                                <span class="deal-price">₹485</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Fitness Pack Combo" data-price="485">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combo 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-primary">Save ₹110</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/96ceb4/ffffff?text=Organic+Pack" alt="Organic Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Organic Pack</h4>
+                            <p class="deal-description">100% organic and natural</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>5 Organic Nutrition Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>2 Organic Peanut Butter</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Organic Certificate</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹728</span>
+                                <span class="deal-price">₹618</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Organic Pack Combo" data-price="618">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combo 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="deal-card">
+                        <div class="deal-badge">
+                            <span class="badge bg-dark">Save ₹165</span>
+                        </div>
+                        <div class="deal-image">
+                            <img src="https://via.placeholder.com/350x250/ffeaa7/ffffff?text=Monthly+Pack" alt="Monthly Pack">
+                        </div>
+                        <div class="deal-content">
+                            <h4 class="deal-title">Monthly Pack</h4>
+                            <p class="deal-description">One month supply for health</p>
+                            <div class="deal-items">
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>20 Mixed Nutrition Bars</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>4 Different Peanut Butters</span>
+                                </div>
+                                <div class="item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Nutrition Plan + Free Shipping</span>
+                                </div>
+                            </div>
+                            <div class="deal-pricing">
+                                <span class="original-price">₹2500</span>
+                                <span class="deal-price">₹2335</span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart" data-name="Monthly Pack Combo" data-price="2335">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="section-title">Why Choose Our Combo Deals?</h2>
+                    <p class="section-subtitle">Maximum value for your health investment</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h5>Save More</h5>
+                        <p>Up to 30% savings on combo purchases</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h5>Free Shipping</h5>
+                        <p>Free delivery on all combo orders</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h5>Free Gifts</h5>
+                        <p>Exclusive gifts with premium packs</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-variety"></i>
+                        </div>
+                        <h5>Variety</h5>
+                        <p>Try different flavors and products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        .deal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+        
+        .deal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .deal-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+        }
+        
+        .deal-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .deal-content {
+            padding: 1.5rem;
+        }
+        
+        .deal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .deal-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .deal-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .deal-items .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .deal-items .item i {
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .deal-pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        
+        .deal-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-color);
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card p {
+            color: var(--text-light);
+        }
+    </style>
+</body>
+</html>

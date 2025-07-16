@@ -3,161 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - Nutrition Bars</title>
+    <title>Shopping Cart - NutriBar Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Your Shopping Cart</h1>
-            <p class="lead">Review your items and proceed to checkout</p>
-        </div>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="combos.html">Combos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-link active" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Cart Section -->
+    <section class="cart-section py-5" style="margin-top: 100px;">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Nutrition Bars</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="peanutbutter.html">Peanut Butter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="combo.html">Combo Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container my-5">
-        <div class="row">
-            <!-- Cart Items -->
-            <div class="col-lg-8">
-                <div class="card shadow">
-                    <div class="card-header bg-success text-white">
-                        <h3 class="mb-0">Items in Your Cart</h3>
+            <div class="row">
+                <div class="col-12">
+                    <div class="cart-header text-center mb-5">
+                        <h1 class="hero-title">Shopping Cart</h1>
+                        <p class="hero-subtitle">Review your selected items before checkout</p>
                     </div>
-                    <div class="card-body">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="cart-items-section">
+                        <div class="cart-table-header">
+                            <h4><i class="fas fa-shopping-bag me-2"></i>Cart Items</h4>
+                            <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">
+                                <i class="fas fa-trash me-2"></i>Clear All
+                            </button>
+                        </div>
+                        
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="table-light">
+                            <table class="table">
+                                <thead>
                                     <tr>
                                         <th>Product</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
-                                        <th>Subtotal</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="cart-items">
-                                    <tr>
-                                        <td colspan="5" class="text-center py-4">
-                                            <div class="spinner-border text-success" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
-                                            <p class="mt-2 text-muted">Loading cart items...</p>
-                                        </td>
-                                    </tr>
+                                    <!-- Cart items will be populated here -->
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Cart Summary -->
-            <div class="col-lg-4">
-                <div class="card shadow">
-                    <div class="card-header bg-dark text-white">
-                        <h4 class="mb-0">Order Summary</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Items:</span>
-                            <span id="items-count">0</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Subtotal:</span>
-                            <span id="subtotal">₹0.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Shipping:</span>
-                            <span id="shipping">Free</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between mb-4">
-                            <strong>Total:</strong>
-                            <strong id="cart-total" class="text-success">₹0.00</strong>
+                
+                <div class="col-lg-4">
+                    <div class="cart-summary">
+                        <h4 class="mb-4"><i class="fas fa-calculator me-2"></i>Order Summary</h4>
+                        
+                        <div class="summary-row">
+                            <span>Items (<span id="items-count">0</span>)</span>
+                            <span id="subtotal">₹0</span>
                         </div>
                         
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-success btn-lg" onclick="proceedToCheckout()">
-                                Proceed to Checkout
-                            </button>
-                            <button class="btn btn-outline-danger" onclick="clearCart()">
-                                Clear Cart
-                            </button>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="text-success">Free</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Recommended Products -->
-                <div class="card shadow mt-4">
-                    <div class="card-header bg-info text-white">
-                        <h5 class="mb-0">You might also like</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 mb-3">
-                                <img src="https://via.placeholder.com/150x100/28a745/ffffff?text=Almond+Cocoa" class="img-fluid rounded" alt="Recommended">
-                                <p class="small mt-2 mb-1">Almond Cocoa Crunch</p>
-                                <p class="small text-success">₹99</p>
+                        
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span>₹0</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="cart-total">₹0</span>
+                        </div>
+                        
+                        <button class="btn btn-primary w-100 mt-3" onclick="proceedToCheckout()">
+                            <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+                        </button>
+                        
+                        <div class="promo-code mt-3">
+                            <h6>Have a promo code?</h6>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter code">
+                                <button class="btn btn-outline-secondary">Apply</button>
                             </div>
-                            <div class="col-6 mb-3">
-                                <img src="https://via.placeholder.com/150x100/28a745/ffffff?text=Peanut+Butter" class="img-fluid rounded" alt="Recommended">
-                                <p class="small mt-2 mb-1">Creamy Peanut Butter</p>
-                                <p class="small text-success">₹149</p>
+                        </div>
+                        
+                        <div class="payment-methods mt-4">
+                            <h6>We Accept</h6>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                                <i class="fab fa-paypal"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Continue Shopping -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="products.html" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <!-- Continue Shopping -->
-        <div class="text-center mt-5">
-            <a href="products.html" class="btn btn-outline-success btn-lg me-3">Continue Shopping</a>
-            <a href="combo.html" class="btn btn-success btn-lg">Check Combo Offers</a>
-        </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-success text-white text-center py-4">
+    <footer class="footer-section py-5">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Nutrition Bars. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">
+                        <i class="fas fa-leaf me-2"></i>NutriBar Pro
+                    </h5>
+                    <p class="footer-text">Premium nutrition bars crafted with the finest natural ingredients to fuel your active lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Nutrition Bars</a></li>
+                        <li><a href="peanutbutter.html">Peanut Butter</a></li>
+                        <li><a href="combos.html">Combo Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h6 class="footer-title">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="footer-title">Newsletter</h6>
+                    <p class="footer-text">Subscribe for exclusive offers and health tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">© 2025 NutriBar Pro. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        .cart-section {
+            min-height: 70vh;
+        }
+        
+        .cart-table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+        }
+        
+        .cart-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            position: sticky;
+            top: 120px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .payment-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .payment-icons i {
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .table th {
+            background: var(--light-color);
+            border: none;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .table td {
+            vertical-align: middle;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
 </body>
 </html>
