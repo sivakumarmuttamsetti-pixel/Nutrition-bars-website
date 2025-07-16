@@ -32,25 +32,36 @@
     </div>
   </nav>
   <main class="container my-5">
-    <h2 class="mb-4 text-center">Items in Your Cart</h2><table class="table table-bordered">
-  <thead class="table-success">
-    <tr>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>Subtotal</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody id="cart-items"></tbody>
-  </table>
+    <h2 class="mb-4 text-center">Items in Your Cart</h2>
+    
+    <div id="cart-container">
+      <table class="table table-bordered">
+        <thead class="table-success">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <tr>
+            <td colspan="5" class="text-center">Loading cart items...</td>
+          </tr>
+        </tbody>
+      </table>
 
-<h4 class="text-end">Total: <span id="cart-total">₹0</span></h4>
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <button class="btn btn-outline-danger" onclick="clearCart()">Clear Cart</button>
+        <h4 class="mb-0">Total: <span id="cart-total">₹0</span></h4>
+      </div>
 
-<div class="text-center mt-4">
-  <a href="products.html" class="btn btn-success me-2">Continue Shopping</a>
-  <a href="checkout.html" class="btn btn-success">Proceed to Checkout</a>
-</div>
+      <div class="text-center mt-4">
+        <a href="products.html" class="btn btn-success me-2">Continue Shopping</a>
+        <a href="checkout.html" class="btn btn-success" id="checkout-btn">Proceed to Checkout</a>
+      </div>
+    </div>
   </main>
   <footer class="bg-success text-white text-center py-3">
     &copy; 2025 Nutrition Bars. All rights reserved.
